@@ -1,4 +1,4 @@
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 from langchain_core.messages import AnyMessage, SystemMessage, HumanMessage
 from typing import List
 
@@ -12,10 +12,10 @@ from app.ai.structured_outputs.ai_response import AIResponse
 
 from app.core.settings import settings
 
-class OpenAIModel:
+class GroqModel:
 
-    def __init__(self, model: str = "gpt-5.1", temperature: float = 0.1):
-        self.model = ChatOpenAI(model=model, temperature=temperature, api_key=settings.GROQ_API_KEY).with_structured_output(AIResponse)
+    def __init__(self, model: str = "llama-3.1-8b-instant", temperature: float = 0.1):
+        self.model = ChatGroq(model=model, temperature=temperature, api_key=settings.GROQ_API_KEY).with_structured_output(AIResponse)
 
     def __get_messages(self, ticker: str) -> List[AnyMessage]:
         finance = Finance(ticker)
