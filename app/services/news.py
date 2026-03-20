@@ -4,7 +4,7 @@ from app.core.settings import settings
 
 class News:
 
-    def __init__ (self, ticker: str, time_period: str = "last_month", engine: str = "tavily"):
+    def __init__ (self, ticker: str, time_period: str = "last_month", engine: str = "google"):
         self.ticker = ticker
         self.time_period = time_period
         self.engine = engine
