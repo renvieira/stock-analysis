@@ -74,6 +74,7 @@ soupsieve==2.8.3
 SQLAlchemy==2.0.48
 starlette==0.37.2
 ta==0.11.0
+tavily-python==0.7.23
 tenacity==8.3.0
 tiktoken==0.7.0
 tqdm==4.67.3
